@@ -38,5 +38,6 @@ public class SampleMain {
 //		method¹®
 //		new MethodEx2().start();
 //		new Method3().start();
+		new MethodEx4().start();
 	}
 }
