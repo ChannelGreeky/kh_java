@@ -1,11 +1,12 @@
 package com.kh.run;
 
-import com.kh.test.Computer;
+import or.kr.iei.member.controller.MemberMgr;
 
 public class TestMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Computer().start();
+		//new StudentMgr().start();
+		new MemberMgr().start();
 	}
 }
