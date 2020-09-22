@@ -14,6 +14,7 @@ public class MemberMgr {
 			System.out.println("1. 회원정보 입력");
 			System.out.println("2. 회원정보 출력");
 			System.out.println("3. 회원정보 삭제");
+			System.out.println("4. 회원정보 수정");
 			System.out.println("0. 종료");
 			System.out.print("입력:");
 			int select = sc.nextInt();
@@ -27,6 +28,9 @@ public class MemberMgr {
 				break;
 			case 3:
 				memberDelete();
+				break;
+			case 4:
+				memberUpdate();
 				break;
 			case 0:
 				System.out.println("프로그램을 종료합니다.");
@@ -76,6 +80,49 @@ public class MemberMgr {
 		} else {
 			System.out.println("삭제 완료");
 			m = null;
+		}
+	}
+
+	public void memberUpdate() {
+		if (m == null) {
+			System.out.println("수정할 회원정보가 없습니다.");
+		} else {
+			System.out.println("====회원관리 시스템====");
+			System.out.println("1. 이름 수정");
+			System.out.println("2. 나이 수정");
+			System.out.println("3. 주소 수정");
+			System.out.println("4. 핸드폰번호 수정");
+			System.out.println("5. 성별 수정");
+			System.out.println("0. 돌아가기");
+			System.out.print("입력:");
+			int select = sc.nextInt();
+
+			
+			switch (select) {
+			case 1:
+				System.out.print("회원 이름:");
+				m.setName(sc.next());
+				break;
+			case 2:
+				System.out.print("회원 나이:");
+				m.setAge(sc.nextInt());
+				break;
+			case 3:
+				System.out.print("회원 주소:");
+				m.setAddress(sc.next());
+				break;
+			case 4:
+				System.out.print("회원 핸드폰 번호:");
+				m.setPhone(sc.next());
+				break;
+			case 5:
+				System.out.print("회원 성별:");
+				m.setGender(sc.next());
+				break;
+			case 0:
+				return;
+			}
+			System.out.println("수정 완료");
 		}
 	}
 }

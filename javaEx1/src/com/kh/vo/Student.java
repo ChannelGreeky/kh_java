@@ -1,22 +1,31 @@
-package or.kr.iei.member.vo;
+package com.kh.vo;
 
-public class Member {
+public class Student {
+	
 	private String name;
+	private String id;
 	private int age;
-	private String address;
 	private String phone;
 	private String gender;
 
+//	Student(String name, String id, int age, String phone, String gender){
+//		this.name = name;
+//		this.id = id;
+//		this.age = age;
+//		this.phone = phone;
+//		this.gender = gender;
+//	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 	public void setPhone(String phone) {
@@ -27,16 +36,17 @@ public class Member {
 		this.gender = gender;
 	}
 
+	
 	public String getName() {
 		return this.name;
 	}
 
-	public int getAge() {
-		return this.age;
+	public String getId() {
+		return this.id;
 	}
 
-	public String getAddress() {
-		return this.address;
+	public int getAge() {
+		return this.age;
 	}
 
 	public String getPhone() {
@@ -46,5 +56,4 @@ public class Member {
 	public String getGender() {
 		return this.gender;
 	}
-
 }
