@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.kh.test.Monitor"/>
 <fullyQualifiedTypeName name="or.kr.iei.member.vo.Member"/>
+<fullyQualifiedTypeName name="com.kh.member.vo.Silver"/>
+<fullyQualifiedTypeName name="com.kh.member.vo.Gold"/>
+<fullyQualifiedTypeName name="com.kh.member.vo.Platinum"/>
 </qualifiedTypeNameHistroy>
