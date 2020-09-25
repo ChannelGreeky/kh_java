@@ -1,0 +1,148 @@
+@Object
+-> 모든 클래스의 최상위클래스
+ex)회원 관리 프로그램에서 부모 : Grade , 자식 : Silver, Gold, Platinum 등
+
+@Wrapper 클래스
+->객체지향 언어에서는 이루어져 있는 전반적인 것들이 객체이기 때문에
+객체로만 처리할 수 있는것들이 다수있음
+->하지만 표준 자료형은 객체 타입이 아님
+->기본 자료형들은 단순히 데이터의 타입을 명시하는 것이므로
+메소드를 포함하고 있는 객체가 아니기 때문에 객체로만 처리할 수 있는 로직에서는 처리할 수 없는
+문제가 발생함
+->Wrapper Class를 이용하면 기본 자료형도 "객체화" 시켜주게 됨
+
+##기본 자료형 종류##
+boolean 1byte
+byte 1byte
+char 2byte
+short 2byte
+int 4byte
+long 8byte
+float 4byte
+double 8byte
+
+##Wrapper Class 종류##
+Boolean
+Byte
+Character
+Short
+Int
+Long
+Float
+Double
+
+@오토박싱(Auto Boxing) 오토언박싱(Auto Unboxing)
+->랩퍼 클래스 안에 있는 기본 자료형 데이터를 넣거나 혹은 꺼낼때에는 박싱과 언박싱 작업을 진행 해야 함
+#박싱 : Integer num = new Integer(10); -> 객체화
+#언박싱 : int n = num.intValue(); -> 박싱한것을 다시 변수화
+
+※실제 사용시에는 자동(오토)으로 박싱과 언박싱 처리를 한다.
+
+##오토 박싱##
+-> 기본자료형에서 Wrapper Class로 자동 변환되는 것을 오토박싱 이라고 함
+-> Integer num = 10; //10이라는 정수 데이터를 객체화 하여 Wrapper Class로 변환
+
+##오토 언박싱##
+-> Wrapper Class에서 기본 자료형으로 자동 변환되는 것을 오토 언박싱이라고 함
+ex. Integer num = 10;   //오토박싱
+    int n = num;          //오토언박싱
+
+!!!오토박싱과 오토언박싱은 같은 타입끼리만 가능하다!!!
+
+@Wrapper Class를 이용한 문자열 처리
+-Wrapper Class를 이용하면 문자열 -> 기본자료형(언박싱), 기본자료형 -> 문자열(박싱) 변환이 가능
+
+##문자열 -> 기본 자료형 (언박싱)##
+String data = "999";
+int i = Integer.parseInt(data);
+
+## 기본 자료형 -> 문자열 (박싱)##
+int i = 999;
+String data = Integer.valueOf(i).toString();
+
+또는
+
+int i = 999;
+String data = String.valueOf(i);
+
+@API(Application Programming Interface)
+->프로그래밍을 할 때 어떠한 특정 기능을 처리할 수 있도록 만들어 놓은 클래스나 메소드의 집합
+->윈도우 API, JAVA API, 웹 API 등 다양하게 존재한다.
+
+※윈도우 API : 윈도우 운영체제를 프로그래밍 할 수 있도록 미리 여러가지 기능을 정의해 놓은 API
+
+※JAVA API : 자바 언어를 사용하여 특정 기능을 구현할 수 있도록 미리 여러가지 기능을 정의해 놓은 API
+
+※웹 API : 웹 개발에서 개발해 놓은 것을 이용하여 손 쉽게 개발할 수 있도록 미리 여러가지 기능을 정의해 놓은 API
+
+@String, StringBuffer, StringBuilder
+#String Class#
+->문자열을 처리할 수 있는 Class
+->문자열 값은 수정 하지 못한는 immutable(불변)임
+->수정 시 수정된 문자열이 새로 할당되어 새 주소를 넘김
+->문자열을 자주 수정할 경우 메모리 낭비가 생김
+
+#StringBuffer Class
+->문자열 값을 수정할 수 있는 mutable(가변)임
+->문자열을 자주 변경해야 하는 경우 String보다 유용 함
+->기존 문자열에 수정되어 적용 됨(추가, 수정, 삭제 등
+->기본 16문자 크기를 지정된 퍼러를 이용하며, 크기를 증가시킬 수 있음.
+->쓰레드 safe기능을 제공(StringBuilder에 비해 성능 저하 요인이 될 수 있음)
+ -capacity 메소드 : 실제 할당된 공간의 크기를 알 수 있음
+ -length 메소드 : 실제 문자열 길이를 알 수 있음
+ -reverse 메소드 : 저장된 문자열을 거꾸로 재배치
+ -insert메소드 : 문자열의 특정 위치에 문자열 추가
+ -append메소드: 문자열의 끝에 문자열을 추가
+
+#StringBuilder Class
+->StringBuffer Class와 동일
+->단, 쓰레드 safe기능을 제공하지 않음
+-버퍼 공간이 넘치게 되면( 기존길이(초기화한 문자열길이) + 버퍼길이(16) + 1) * 2
+
+@StringTokenizer Class
+->문자열을 분석하여 토큰으로 분리시켜줌
+->파일에 저장된 텍스트를 처리하는 경우에 유용하게 쓰인다.
+->생성시 전달받은 문자열을 구분자로 나누어 각 토큰에 저장한다.
+-countTokens() : 남아 있는 토큰의 수
+-hasMoreTokens() : 남아 있는 토큰이 있는지 확인 (true, false)
+-nextToken() : 토큰을 하나씩 꺼내옴
+
+###시간 관련 클래스###
+@Calendar Class
+-> 현재 시간과 관련있는 Class
+-> Calendar Class는 추상클래스로써, 생성자가 Protected이기 때문에
+    new를 통해 객체 생성을 하지 못하고, getInstance() 메소드를 통해
+    객체화 하여 사용해야한다.
+-> GregorianCalendar는 Calendar Class의 자식 클래스이며
+   년,월,일,시,분,초 정보를 담고 있는 필드를 사용할 수 있다.
+※Calendar의 필드 Month는 값이 0부터 시작하므로 주의 해야 한다.
+(월을 계산할 때 +1 하여 계산해야 함 / ex. 0이나오면 1월)
+
+ex. Calendar today = Calendar.getInstance();
+## get method ##
+-> today.get(Calendar.YEAR) 이런식으로 년,월,일,시,분,초 정보를 담고 있는 필드를 사용가능
+    MONTH는 0부터, 요일은 일요일==1, AM==0 
+
+## set method ##
+-> 날짜 설정하기
+
+## getTimeInMillis method ##
+->1970.01.01을 기준으로 set메소드(설정 안하면 default로 현재시간 값)로 설정한 시간까지의
+   밀리세컨드초(1/1000)를 구함
+
+@Data Class
+-> 생성자 2개만 사용가능 하고 나머지는 deprecated임 ※deprecated:잘사용하지 않음
+-> 일반적으로 Calendar클래스 사용 권장
+-> java.util 패키지
+-> 생성자함수 즉, Date today = new Date(); 에 아무 파라미터도 넣지 않으면 현재시간
+-> 파라미터에 들어가는 수의 단위는 밀리세컨드(1/1000초)로 1990.01.01 09:00로부터 파라미터로 준 시간만큼
+    지난 시간을 얻어올 수 있다. 즉 Date today = new Date(1000); 이라 하면 today는 1990.01.01 09:00로부터 1초 지난 시간을 얻어온다.
+
+@SimpleDateFormat Class
+-> Date의 날짜, 시간 정보를 원하는 format으로 출력하도록 기능 제공
+-> 생성자 함수의 하라미터로 원하는 format을 파라미터로 제공하면 해당 format에 맞춰 반환하여 준다.
+ex. Date today = new Date();
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+
+    String str = sdf.format(today); //str에 yyyy-MM-dd-HH-mm-ss 포맷에 맞춰 날짜를 문자열로 받아옴
+-> java.text 패키지
