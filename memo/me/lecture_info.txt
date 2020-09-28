@@ -1,0 +1,44 @@
+@@@@@javaProject@@@@@
+
+1. javaProject : Array, Method, Switch, Magic
+
+2. javaProject2 : Setter, Getter, Entity, Class
+
+3. javaProject3 : Constructor, Overloading
+
+4. javaProject4 : Inheritance, Polymorphism, Override
+
+5. javaProject5 : Interface Class
+
+6. javaProject6 : Wrapper Class, autoBoxing
+
+7. javaProject7 : API
+
+8. javaProject8 : Exeption, 사용자 정의 예외, throw
+
+9. javaProject9 : Generic, 다중 Generic
+
+10. javaProject10 : ArrayList, Collection.sort()
+
+11. javaEx1 : Setter, Getter 이용 학생관리 시스템
+
+12. memberMgr : 객체, 상속, 다형성, 오버라이드 이용한 포인트관리 시스템
+
+
+@@@@@lectureMemo@@@@@
+
+1. 20200917 : 기초이론, Array
+
+2. 20200918 : Switch, Method
+
+3. 20200921 : Method, 접근제어지시자, this, Class, setter, getter
+
+4. 20200922 : 생성자, 오버로딩, 지역변수 전역변수, final, 객체배열
+
+5. 20200923 : Has a 포함관계, 상속, 다형성, 오버라이딩
+
+6. 20200924 : 추상클래스, 인터페이스
+
+7. 20200925 : Wrapper, 오토박싱, API(StringBuffer, StringBuilder, StringTokenizer, 시간관련)
+
+8. 20200928 : Exeption, throws, finally, 사용자 정의 예외, Object클래스 , toString(), Generic, Collection, ArrayList

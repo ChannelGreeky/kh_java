@@ -220,8 +220,8 @@ public class SwitchPractice {
 	
 	public void practice7() {
 		Scanner sc = new Scanner(System.in);
-		char operator;
 		int a, b;
+		char operator;
 		
 		System.out.println("===계산기 프로그램===");
 		

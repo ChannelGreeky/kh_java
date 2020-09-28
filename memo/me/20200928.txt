@@ -1,0 +1,218 @@
+@Exception
+-> 예외 라는 뜻을 가지고 있고, 예외는 예기치 못한 상황을 뜻 함
+-> 프로그래밍을 하다보면 수 많은 오류 상황을 직면하게 됨
+-> 자바에서는 예외(Exeption) 처리를 통해 프로그래머가 정상적인 처리에서 벗어나는 경우에 대한
+    대비코드를 작성하는 방법이라고 볼 수 있음
+
+@예외처리의 목적
+-> 프로그램의 비정상적인 종료를 막고, 정상적인 실행상태를 유지하기 위함
+
+@try ~ catch
+-> 예외처리를 위한 문법
+-> 자바에서는 
+-> Exception e 예외가 발생하면 자동으로 래퍼런스 e에 발생한 예외객체의 주소가 저장된다.
+-> 에러코드 출력 : e.getMessage()
+
+@finally
+-> finally는 예외 처리 여부와 상관없이 실행되는 로직
+-> 항상 try와 catch구문 이후에 올 수 있음
+-> 예외가 발생하던 안발생하던 처리해야 할 때
+
+@예외의 종류
+-> Throwable : 예외의 가장 큰 조상, 예외 부분에서는 Object와 비슷한 최고조상이라고 볼 수 있음
+                    (개발자가 구현해서 사용하지 않음)
+-> Error : 개발자가 소스코드로 해결할 수 없는 에러(시스템 에러)
+-> Exception : 개발자가 소스코드로 해결할 수 있는 에러(코드 에러)
+-> Runtime Exception : 애플리케이션이 작동하면서 발생하는 에러
+
+@Checked Exception과 Unchecked Exception
+-> Checked Exception은 예외처리를 강제화 해야 하는 것
+-> Checked Exception 소스코드 상에서 반드시 개발자가 처리해야 되는 Exception
+-> Unchecked Exception은 예외처리를 강제화 하지 않은 것
+-> Unchecked Exception 소스코드 상에서 선택적으로 개발자가 처리해도 되는 Exception
+
+-> ArithmeticException : 수학연산 예외(ex. 0으로 나눈다는 등)
+-> InputMismatchException : 입력 타입 예외 (ex. nextInt()에 문자입력 등)
+
+@예외의 처리
+1. try~catch문을 사용하여 발생한 곳에서 직접 처리하는 방법
+-> catch문에서 | (or연산자) 를통해 하나의 catch문으로 해결 가능
+
+2. throws를 사용하여 예외를 다른곳에서 처리하라고 하는 방법
+-> 해당 예외가 존재하는 함수를 호출하는 곳에서 처리해주어야 함
+-> throws로 한번에 두개의 예외를 던질 수 있다.
+
+@사용자 정의 예외 만들기
+-> 표준 예외 클래스로도 많은 예외상황을 표현할 수 있으나, 추가적인 경우
+사용자가 직접 만들어서 예외를 처리할 수도 있음
+-> 단, 예외를 만들기 전 checked로 처리할 것인가, unchecked로 처리할 것인가를
+정한 후 만들어야 한다.
+※ 상속 받을 때 Exception을 상속하면 Checked Exception,
+RuntimeException을 상속하면 Unchecked Exception임
+
+EX)
+ExceptionTest2 extends RunTimeException
+	-> Unchecked Exception으로 개발하겠다.
+	-> try~catch문을 강제화하지 않겠다.
+
+ExceptionTest2 extends RunTimeException
+	-> Checked Exception으로 개발하겠다.
+	-> try~catch문을 강제화하겠다.
+
+@try~with~resource
+-> Java7에서 추가된 기능
+-> finally에서 작성되었던 리소스 연결 종료 코드를 자동으로 할 수 있도록 해주는 구문
+
+@Object Class
+-> 자바에서 상속은 필수적
+-> 상속을 하지 않아도 암묵적으로 상속을 진행하고 있는 것임
+ex. 우리가 클래스를 만들기만 해도 자동으로 Object라는 클래스를 상속 받는다.
+-> Object Class는 모든 Class의 조상 Class
+-> Object Class는 Class가 가져야할 유용한 몇가지 메소드들을 제공 함
+  ※이 중 toString, hashcode, equals를 볼것임
+
+@toString
+-> Object Class에 속해 있는 메소드
+-> 해당 인스턴스의 기본 정보를 보여줌
+
+ex. ObjectTest1 ot = new ObjectTest1(); 이렇게 객체 생성후 
+	System.out.println(ot.toString());
+	System.out.println(ot);  //이렇게 출력하면
+	출력결과 : com.kh.run.ObjectTest1@7852e922
+	-> com.kh.run   : 패키지 명
+	->ObjectTest1   : 클래스명
+	->@	         : 구분자
+	->7852e922      : 인스턴스들을 구분하기 위한 식별값
+
+-> toString은 Override해서 사용할 수 있음
+-> toString메소드는 객체의 기본 정보 출력을 커스텀(오버라이딩)하여 사용할 수 있다.
+
+@hashcode
+-> 객체를 구별하기 위해 고유한 정수값을 출력시켜주는 메소드
+-> hash알고리즘을 통해 계산된 값을 출력하는 메소드
+
+@equals
+-> 객체와 객체를 비교하기 위한 메소드
+-> 일반적으로 문자열 객체를 비교하여 같은 값인지를 확인하기 위한 용도로 사용 됨
+ex)
+	String message = "test";
+	String tmp;
+	if(message.equals(tmp)){
+		System.out.println("같은글자")
+	} else {
+		System.out.println("다른글자")
+	}
+
+@Generic
+->제네릭이란 클래스 내부에서 사용할 데이터 타입을 외부에서 지정하는 기법
+-> jdk 1.5 부터 제공되는 기능
+
+ex.
+public class GenericTest1<T> {
+	private T data;
+	public GenericTest1(T data) {
+		this.data = data;
+	}
+}
+new GenericTest1<String>("안녕하세요");
+new GenericTest1<Integer>(150);
+new GenericTest1<Double>(9.456);
+처럼 동적으로 데이터타입 변경 가능
+
+-> Generic은 데이터 타입을 정적으로 표현하지 않고, 동적으로 처리하기 위한 문법
+-> 단, 데이터타입은 ClassType만 가능 (객체 타입)(Integer, Short, String, Double, Character 등)
+-> T는 Type의 약자로 동적으로 데이터타입을 받겠다는 의미 이것을 Generic이라고 한다.
+
+
+@제네릭을 이용하여 여려 개의 데이터 타입을 명시하는 방법
+-> 2개의 타입을 명시함 <T, E> 단, 동일한 문자를 사용하면 안됨 <T, T> 불가능
+
+ex.
+public class GenericTest2<T, E> {
+	private T data1;
+	private E data2;
+
+	public GenericTest2() {	}
+	
+	public GenericTest2(T data1, E data2) {
+		this.data1 = data1;
+		this.data2 = data2;
+	}
+}
+GenericTest2 gt1 = new GenericTest2<String, Integer>("Hello", 100);
+GenericTest2 gt2 = new GenericTest2<Double, Character>(3.141592, 'A');
+처럼 두개의 데이터타입을 명시할 수 있음
+
+※다운캐스팅 : 상위 객체에서 하위 객체로 형변환 하는 것
+ex.)
+	//다운캐스팅을 이용한 객체 다형성 처리
+	AnimalMgr m1 = new AnimalMgr(new Tiger("꽥꽥"));
+	AnimalMgr m2 = new AnimalMgr(new Bear("미야우"));
+	
+	System.out.println(((Tiger)m1.getData()).getHowl());
+	System.out.println(((Bear)m2.getData()).getHowl());
+		
+	//Generic을 이용한 객체 다형성 처리
+	AnimalMgr<Tiger> m3 = new AnimalMgr<Tiger>(new Tiger("꽥꽥"));
+	AnimalMgr<Bear> m4 = new AnimalMgr<Bear>(new Bear("미야우"));
+		
+	System.out.println(m3.getData().getHowl());
+	System.out.println(m4.getData().getHowl());
+
+-> 이렇게 다운캐스팅을 사용해서 여러 객체타입을 사용하는 것보다 Generic을 사용하면 편함
+
+@Collection
+-> 메모리 상에서 자료를 구조적으로 처리하는 방법을 자료구조라 일컫음
+-> 컬렉션은 자바에서 제공하는 자료구조를 담당하는 프레임워크
+※ 프레임워크 : 개발을 수월하게 하기 위하여 다양한 기능을 제공
+-> 데이터의 추가, 삭제, 정렬 등의 기능처리가 간단하게 해결되어 개발자가
+자료구조적 알고리즘을 별도로 구현할 필요가 없음
+
+@자료구조란?
+-> 데이터(자료)를 메모리에서 구조적, 효율적으로 처리하기 위한 방법론
+
+@배열의 한계점
+1. 한 번 크기를 지정하면 변경 불가
+2. 배열에 기록된 데이터에 대한 중간 위치의 추가, 삭제가 어려움
+3. 한 타입의 데이터만 저장 가능
+
+@컬렉션의 장점
+1. 저장하는 크기의 제약이 없음
+2. 추가, 삭제, 정렬 등의 기능처리가 간단하게 구현 됨
+=> 자료를 구조적으로 처리하는 자료구조가 내장되어 알고리즘 구현이 별도로 필요 없음
+3. 여러 타입을 저장할 수 있음
+=> 다양한 타입을 저장할 수 있음 (단, 객체 타입)
+=> 일반적인 기본 자료형은 Wrapper Class를 활용
+
+@컬렌션의 주요 인터페이스
+-> 컬렉션은 크게 2개의 인터페이스로 나눌 수 있음 (Collection, Map)
+
+@Collection의 계열
+-List 계열 (ArrayList, Vector, LinkedList)
+	=>순서를 유지하고 저장
+	=>중복된 데이터 저장 가능
+
+-Set 계열 (HashSet, Tree Set)
+	=>순서를 유지하지 않고 저장
+	=>중복된 데이터 저장 불가
+
+-Queue 계열 (PriorityQueue)
+	=>FIFO구조
+	=>들어온 순서대로 데이터를 저장하고 뺄 수 있음
+
+@Map
+-> List와 Set을 합친 구조
+-> 키와 값을 이용하여 저장
+-> 키는 중복 저장 안됨
+-> 값은 중복 저장 가능
+-> HashMap, HashTable, TreeMap, Properties
+
+@ArrayList
+-> ArrayList는 기존 배열과는 다르게 크기가 정해져 있지 않음
+-> java.util 패키지 안에 포함되어 있음 (import 할 경우 주의)
+-> 데이터를 추가할 때는 add 메소드를 사용하여 데이터를 추가
+-> 사이즈를 확인할 때에는 size 메소드를 활용
+-> 데이터를 꺼내올 때에는 get 메소드를 사용하여 데이터를 꺼내옴
+-> 데이터를 변경할 때에는 set 메소드를 활용
+-> 데이터를 삭제할 때에는 remove 메소드 (1개), clear 메소드(전체)를 활용
+-> List의 정렬은 Collections.sort(리스트명); 을 사용하여 정렬한다.
