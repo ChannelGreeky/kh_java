@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\JavaWorkSpace\kh_java"/>
 		<item value="D:\JavaWorkSpace\javaProject4_1"/>
 		<item value="D:\JavaWorkSpace\javaProject4"/>
 		<item value="D:\JavaWorkSpace\javaProject"/>
