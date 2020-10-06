@@ -4,3 +4,8 @@ http://192.168.30.35:8080/
 https://zoom.us/j/93841475888?pwd=RTdjdWlzVXlJeDdiVk1BKzNESVV3UT09
 ID : 232 123 0712
 pwd : pD7ubB
+
+
+자바 개발자 : java / oracle / JDBC
+
+우리 커리큘럼 : java / oracle / JDBC / HTML / CSS / javaScript / jquery / JSP / Servlet / Mybatis / Spring

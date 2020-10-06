@@ -4,7 +4,9 @@ public class TestMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new Restore().restoreFile();
+		new Serial().objectIo();
+		//new Restore().restoreFile();
+		//new Restore().restoreFileAnswer();
 		//new FileTest2().charInputStream();
 		//new FileTest().charOutputStream();
 		//new FileTest().fileSearch();

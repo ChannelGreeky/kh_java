@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class FileTest2 {
 	Scanner sc = new Scanner(System.in);
-	
+	//문자스트림
 	public void charInputStream() {
 		System.out.println("파일의 문자를 읽어오기 위한 스트림 코드");
 		System.out.println("로드할 파일명 : ");
@@ -32,6 +32,13 @@ public class FileTest2 {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				bfr.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 	}
