@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="com.kh.member.vo.Gold"/>
 <fullyQualifiedTypeName name="com.kh.member.vo.Platinum"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="com.kh.run.CalculatorException"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -31,9 +30,14 @@
 <fullyQualifiedTypeName name="javax.print.attribute.standard.OutputDeviceAssigned"/>
 <fullyQualifiedTypeName name="com.kh.run.MyServerSocket"/>
 <fullyQualifiedTypeName name="com.kh.run.ShServerSocket"/>
+<fullyQualifiedTypeName name="com.kh.run.ClientSocketTest"/>
+<fullyQualifiedTypeName name="com.kh.run.ServerSocketTest"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
-<fullyQualifiedTypeName name="java.io.DataInputStream"/>
 <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
-<fullyQualifiedTypeName name="java.io.EOFException"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="java.net.ConnectException"/>
 <fullyQualifiedTypeName name="java.net.SocketException"/>
+<fullyQualifiedTypeName name="java.io.EOFException"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 </qualifiedTypeNameHistroy>
